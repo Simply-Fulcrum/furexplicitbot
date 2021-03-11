@@ -12,14 +12,7 @@
         "loading": "714093562576502867",
         "details": "714094023396032593"
     },
-    "permissionsServerBlacklist": [
-        "110373943822540800",
-        "446425626988249089",
-        "446425626988249089",
-        "450100127256936458",
-        "387812458661937152",
-        "374071874222686211"
-    ],
+    "permissionsServerBlacklist": [],
     "reactionsTimeout": 600000,
     "setup": {
         "moduleFolders": {
