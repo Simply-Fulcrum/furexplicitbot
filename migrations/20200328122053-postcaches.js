@@ -8,10 +8,10 @@ module.exports = {
     channelID: {
       type: Sequelize.STRING(30),
       allowNull: false,
-      references: {
-        model: 'autopostchannels',
-        key: 'channelID',
-      },
+      // references: {
+      //   model: 'autopostchannels',
+      //   key: 'channelID',
+      // },
     },
     postID: {
       type: Sequelize.INTEGER(10),
