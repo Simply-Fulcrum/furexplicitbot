@@ -26,7 +26,6 @@
         ],
         "setupFunctions": [
             "SETUP_status",
-            "TCKR_botlistAPI",
             "TCKR_autopost"
         ]
     },
