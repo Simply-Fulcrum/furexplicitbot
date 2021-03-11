@@ -1,4 +1,5 @@
 {
+    "README": "THIS FILE IS ONLY FOR TESTING AND SHOULD NOT BE USED. USE THE DOCKER VARIABLES INSTEAD.",
     "token": "**************************",
     "fa_cookie_a": "***********************************",
     "fa_cookie_b": "***********************************",
