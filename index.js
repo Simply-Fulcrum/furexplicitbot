@@ -34,6 +34,12 @@ client.login(config.env.get('token'));
 client.on('ready', async () => {
   console.log(`Logged in as ${client.user.tag} serving ${client.guilds.cache.size} Servers!`);
 
+  // setup tables
+  console.log('[DB] Syncing tables...');
+  // eslint-disable-next-line no-undef
+  await sequelize.sync();
+  await console.log('[DB] Done syncing!');
+
   // start setup Functions
   config.setup.setupFunctions.forEach((FCN) => {
     client.functions.get(FCN).run(client, config);
