@@ -6,6 +6,8 @@ services:
     depends_on:
       - db
     restart: always
+    volumes:
+      - ./main.json:/usr/src/app/config/main.json # mount volume
     environment:
       BotToken:
       FA_COOKIE_A:
