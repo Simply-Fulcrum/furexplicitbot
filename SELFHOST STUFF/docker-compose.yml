@@ -1,0 +1,34 @@
+version: '3.3'
+services:
+  bot:
+    build:
+      context: ../
+    depends_on:
+      - db
+    restart: always
+    environment:
+      BotToken:
+      FA_COOKIE_A:
+      FA_COOKIE_B:
+      e621_login:
+      e621_api_key:
+      DB_name: furexplicitbot
+      DB_user:
+      DB_passw:
+      DB_host: db 
+      DB_dialect: mysql
+
+  db: 
+    image: mariadb:latest # if you want to run this on a raspberry pi, make sure you use a mysql DB that is compatible with the hardware
+    restart: always
+    # ports:
+    #   - "3306:3306" # only needed for debugging
+    volumes:
+      - db_data:/var/lib/mysql # mount volume
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: furexplicitbot
+      MYSQL_USER:
+      MYSQL_PASSWORD:
+volumes:
+  db_data:
