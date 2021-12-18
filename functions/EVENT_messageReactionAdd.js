@@ -52,7 +52,7 @@ module.exports.run = async (client, reaction, user, config, MessageEmbed, messag
     case config.e621.label: {
       // reaction selector for e621
       switch (reaction.emoji.name) {
-        case 'all_details': return client.functions.get('FUNC_e621_detailed').run(reaction, config, MessageEmbed);
+        case 'information': return client.functions.get('FUNC_e621_detailed').run(reaction, config, MessageEmbed);
         case '◀️': return client.functions.get('FUNC_e621_poolBack').run(reaction, config, MessageEmbed);
         // case '🔢': return client.functions.get('FUNC_e621_poolOverview').run(reaction, config, MessageEmbed);
         case '▶️': return client.functions.get('FUNC_e621_poolFore').run(reaction, config, MessageEmbed);
