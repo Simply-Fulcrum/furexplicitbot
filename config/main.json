@@ -78,7 +78,7 @@
             "maxCache": 100,
             "maxChannels": 100,
             "minPostTime": 600000,
-            "maxPostTime": 18000000,
+            "maxPostTime": 180000000000000000000,
             "minPics": 100
         },
         "poolHandler": {
