@@ -1,16 +1,16 @@
 {
     "prefix": {
-        "default": "+",
+        "default": "n!",
         "nicknameSpacer": " | "
     },
-    "owner": "172031697355800577",
-    "managementServerID": "569178297515245578",
-    "clientID": "534828939198070824",
-    "clientIDTesting": "395581313052180483",
+    "owner": "339325362066685952",
+    "managementServerID": "730609289110224947",
+    "clientID": "892672946907250728",
+    "clientIDTesting": "892672946907250728",
     "emoji": {
-        "serverID": "569178297515245578",
-        "loading": "714093562576502867",
-        "details": "714094023396032593"
+        "serverID": "730609289110224947",
+        "loading": "921656155166605312",
+        "details": "921655994478633011"
     },
     "permissionsServerBlacklist": [
         "110373943822540800",
@@ -33,7 +33,6 @@
         ],
         "setupFunctions": [
             "SETUP_status",
-            "TCKR_botlistAPI",
             "TCKR_autopost"
         ]
     },
@@ -77,7 +76,7 @@
             "intervalChecker": 60000,
             "dbOffset": 7200000,
             "maxCache": 100,
-            "maxChannels": 2,
+            "maxChannels": 100,
             "minPostTime": 600000,
             "maxPostTime": 18000000,
             "minPics": 100
