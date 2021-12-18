@@ -40,12 +40,12 @@ module.exports.run = async (client, reaction, user, config, MessageEmbed, messag
   if (await client.functions.get('FUNC_checkBotPermissions').run(reaction.message, 'MANAGE_MESSAGES')) reaction.users.remove(user);
 
   // check if user hit ratelimit
-  if (usedRecently.has(user.id)) {
-    messageFail(reaction.message, 'sowwy, but you can\'t boop me that owten. Plewse wait 3 seconds between boops.');
-    return;
-  }
+  // if (usedRecently.has(user.id)) {
+  //   messageFail(reaction.message, 'sowwy, but you can\'t boop me that owten. Plewse wait 3 seconds between boops.');
+  //   return;
+  // }
   // add user to ratelimit
-  timeout(user.id, usedRecently, 3000);
+  // timeout(user.id, usedRecently, 3000);
 
   // selects what picture service was used
   switch (reaction.message.embeds[0].footer.text) {
