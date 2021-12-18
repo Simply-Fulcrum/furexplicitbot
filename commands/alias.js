@@ -12,5 +12,5 @@ module.exports.run = async (client, message, args, config, MessageEmbed, message
 module.exports.help = {
   name: 'alias',
   title: 'Command aliases',
-  desc: 'Showos the alteraniwe, shorter commands.',
+  desc: 'Shows the alteranive, shorter commands.',
 };

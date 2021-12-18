@@ -29,9 +29,9 @@ async function getTags(message, args) {
 
 function checkRequestedLimit(message, limit) {
   let decision = true;
-  if (limit > 10) {
+  if (limit > 50) {
     // if (limit > 10 && message.author.id !== config.owner) {
-    messageFail(message, 'You can only requwest a maximum of 10 images at the twime.');
+    messageFail(message, 'Snake brain overloaded x3. I can only dump a maximum of 50 images here.');
     decision = false;
   }
   return decision;
@@ -67,9 +67,9 @@ async function requestPictures(message, config, tags, limit) {
 }
 
 function postPictures(MessageEmbed, message, config, limit, messageOwner, pool) {
-  if (pool.length === 0) return messageFail(message, 'Sowwy, I found no pictures with your tags. uwu');
+  if (pool.length === 0) return messageFail(message, 'I couldn\'t find any posts with those tags. Use less tags to broaden your search or use different tags.');
   if (pool.length !== limit) {
-    if (pool.length !== 10 && limit !== 10) messageFail(message, `Thewe arwe ownly ${pool.length + 1} post(s) with your tawgs.`);
+    if (pool.length !== 10 && limit !== 10) messageFail(message, `There are only ${pool.length + 1} post(s) with your tags. Use less tags to broaden your search or use different tags`);
   }
   pool.forEach(async (post) => {
     const embed = new MessageEmbed();

@@ -79,11 +79,11 @@ module.exports.run = async (reaction, config, RichEmbed) => {
     else return;
     // check DB for pool entry
     const poolData = await getPool(reaction.message.id);
-    if (!poolData) return messageFail(reaction.message, 'Seewms like I tripped and lost your pool. I\'m sowwy >w< \nThis happewns, when you take too lowng. uwu');
+    if (!poolData) return messageFail(reaction.message, 'You took too long to react and I have lost your pool.');
     // get pic direct link
     const poolEntry = poolData.find((post) => post.poolIndex === newIndex);
     const post = await requestPicture(poolEntry.postID, config);
-    if (!reaction.message.channel.nsfw && post.rating !== 's') return messageFail(reaction.message, 'Sowwy, but thwe next page is nsfw.');
+    if (!reaction.message.channel.nsfw && post.rating !== 's') return messageFail(reaction.message, 'Sorry dear, but the next page is NSFW x3');
     const postLink = post.file.url;
     // post pic
     postPicture(reaction, RichEmbed, config, color, poolEntry, poolLink, poolName, lastIndex, postLink);

@@ -73,8 +73,8 @@ function checkChannelRating(client, channel) {
 
 function limmiter(ammount, config, message, MessageEmbed) {
   let newAmmount = ammount;
-  if (ammount > 10 && message.author.id !== config.owner) {
-    const note = 'You can only requwest a maximum of 10 images at the twime. I hawe limited it fowor you ^w^';
+  if (ammount > 50 && message.author.id !== config.owner) {
+    const note = 'Snake brain overloaded x3. I can only dump a maximum of 50 images here.';
     noteSend(note, message.channel, MessageEmbed);
     newAmmount = 10;
   }
@@ -139,7 +139,7 @@ module.exports.run = async (client, message, args, config, MessageEmbed, message
     await reaction_loading.users.remove(client.user);
   })
     .catch((err) => {
-      message.channel.send('Sowwy, but it seems like something went wrong... Pleawse report this to my creator. uwu\'')
+      message.channel.send('Snake brain fried xwx. Please report the error.')
         .then(() => message.react('❌'));
       console.error(err);
     });

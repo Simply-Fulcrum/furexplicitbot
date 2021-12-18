@@ -14,5 +14,5 @@ module.exports.run = async (client, message) => {
 module.exports.help = {
   name: 'about',
   title: 'About',
-  desc: 'Learn mowre about me!',
+  desc: 'Learn more about me!',
 };

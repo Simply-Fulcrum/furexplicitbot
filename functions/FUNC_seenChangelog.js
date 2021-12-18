@@ -6,7 +6,7 @@ const errHander = (err) => {
 
 // post changelog
 function postChangelog(message, client) {
-  message.channel.send('Hewwo, I hawe been updawted!');
+  message.channel.send('Snek has been updated x3');
   client.commands.get('changelog').run(client, message)
     .catch(console.log);
 }

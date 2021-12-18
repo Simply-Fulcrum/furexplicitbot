@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args, config, MessageEmbed, prefix)
   });
   const embed = new MessageEmbed()
     .setColor(message.member.displayColor)
-    .setAuthor('Blacklisted tagws in thwis serwer:')
+    .setAuthor('Blacklisted tags:')
     .setDescription(`\`\`\`${blacklistedTags.join(', ')}\`\`\``);
   message.channel.send({ embed });
 };

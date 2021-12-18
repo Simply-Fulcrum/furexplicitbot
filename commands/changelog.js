@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args, config, MessageEmbed, message
       message.react('❌');
       return;
     }
-    message.channel.send(`My current version iws \`${version.version}\``);
+    message.channel.send(`My current version is \`${version.version}\``);
     message.channel.send(data);
   });
 };
@@ -17,5 +17,5 @@ module.exports.run = async (client, message, args, config, MessageEmbed, message
 module.exports.help = {
   name: 'changelog',
   title: 'Changelog',
-  desc: 'Gwet the recent changes.',
+  desc: 'View recent changes',
 };

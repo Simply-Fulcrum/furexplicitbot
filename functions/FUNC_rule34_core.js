@@ -26,19 +26,19 @@ module.exports.run = async (client, message, args, config, MessageEmbed, message
     tags = await message.client.functions.get('FUNC_tagsCleanup').run(message, tags);
 
     if (message.channel.nsfw === false) {
-      message.reply('sowwy, but rule34 is a complete nsfw siwte. So there are almowst no sfw post on there. >.<')
+      message.reply('R34 is completely NSFW, therefore I can only post from r34 in channels marked as NSFW.')
         .then((msg) => msg.delete(30000));
       reaction_loading.users.remove(client.user);
       return;
     }
-    if (limit > 10 && message.author.id !== config.owner) {
-      message.reply('you can only requwest a maximum of 10 images at the twime.')
+    if (limit > 50 && message.author.id !== config.owner) {
+      message.reply('Snake brain overloaded x3. I can only dump a maximum of 50 images here.')
         .then((msg) => msg.delete({ timeout: 10000 }));
       reaction_loading.users.remove(client.user);
       return;
     }
     if (limit > 3) {
-      const embed = new MessageEmbed().setDescription('you requwested over 3 images and this might take somwe time. Pleawse don\'t rush me. >.<');
+      const embed = new MessageEmbed().setDescription('You requested more than a few images and snake brain needs time to post this x3');
       message.channel.send({ embed })
         .then((msg) => msg.delete({ timeout: 10000 }));
     }
@@ -49,7 +49,7 @@ module.exports.run = async (client, message, args, config, MessageEmbed, message
     };
     rp(request)
       .then((json) => {
-        if (json.length === 0) return message.channel.send('Sowwy, I found no pictures with your tags. uwu');
+        if (json.length === 0) return message.channel.send('Sorry dear, but I could not find any images with those tags. Please reduce the amount of tags to broaden the search or use different tags');
         for (let i = 0; i < limit; i++) {
           const randomChoice = Math.floor(Math.random() * json.length);
           let typePic = 'Preview';
@@ -82,7 +82,7 @@ module.exports.run = async (client, message, args, config, MessageEmbed, message
       });
   })
     .catch((err) => {
-      message.channel.send('Sowwy, but it seems like something went wrong... Pleawse report this to my creator. uwu')
+      message.channel.send('Snake brain fried xwx. Please report the error.')
         .then(() => message.react('❌'));
       console.error(err);
     });

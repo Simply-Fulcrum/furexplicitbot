@@ -15,7 +15,7 @@ function checkURL(orgURL, allowedFiletypes) {
 
 module.exports.run = async (client, message, args, config, MessageEmbed) => {
   if (message.channel.type === 'dm') return messageFail(message, 'This command is - for now - server only.');
-  if (!message.channel.nsfw) return messageFail(message, 'I\'m sowwy, bwut thwis iws not yewt awailable for SFW rooms. uwu');
+  if (!message.channel.nsfw) return messageFail(message, 'Sorry Hun, this channel is not marked as NSFW. I\'m afraid I can\'t post that here. Please try again in a more appropriate place~');
   const prefix = await client.functions.get('FUNC_getPrefix').run(message);
   let [link] = args;
   if (!link) {
@@ -25,9 +25,9 @@ module.exports.run = async (client, message, args, config, MessageEmbed) => {
       \`\`\`${prefix}${module.exports.help.name} (LINK/)attachment\`\`\``);
     }
   }
-  if (!checkURL(link, config.imageFinder.allowedFiletypes)) return messageFail(message, `Sowwy, I down't support thwis filetype. Ownly ${config.imageFinder.allowedFiletypes.join(', ')}`);
+  if (!checkURL(link, config.imageFinder.allowedFiletypes)) return messageFail(message, `Sorry dear, I only support these file types: ${config.imageFinder.allowedFiletypes.join(', ')}`);
   const source = await client.functions.get('FUNC_getSource').run(link);
-  if (!source) return messageFail(message, 'Sowwy, i cawn\'t find your pic. uwu');
+  if (!source) return messageFail(message, 'I cannot find this image, please try elsewhere.');
   const site = config[source.website];
   const embed = new MessageEmbed()
     .setColor(site.color)
@@ -44,5 +44,5 @@ module.exports.help = {
   name: 'source',
   title: 'Find source',
   usage: 'LINK/attachment',
-  desc: 'Finds the source to a picture.',
+  desc: 'Finds the source to a image.',
 };

@@ -25,7 +25,7 @@ module.exports.run = async (client, message, config, messageOwner, usedRecently)
   ) {
     text = text.split('>')[1];
     if (text.charAt(0) === ' ') text = text.split(' ')[1];
-    if (!text) return message.channel.send(`Hewwo! Please try using \`${prefix}help\` and gewt to know mwe! ^^`);
+    if (!text) return message.channel.send(`If you wish to see my commands, please type \`${prefix}help\` for a list of them^^!`);
     text = `${prefix}${text}`;
   }
 
@@ -34,7 +34,7 @@ module.exports.run = async (client, message, config, messageOwner, usedRecently)
     // FIXME: catch handler doesnt work
     // message.react('❌').catch();
     if (!config.permissionsServerBlacklist.includes(message.guild.id)) {
-      messageFail(message, 'Sowwy, I am missing permissions sewnd the messages to that channel. uwu');
+      messageFail(message, 'It appears that I lack the permissions required to send this here. I\'morry dear.');
     }
     return;
   }
@@ -51,11 +51,11 @@ module.exports.run = async (client, message, config, messageOwner, usedRecently)
     client.functions.get('FUNC_seenChangelog').run(client, message)
       .catch(console.log);
     if (!usedRecently.has(message.author.id)) {
-      timeout(message.author.id, usedRecently, 5000);
+      timeout(message.author.id, usedRecently, 1000);
       cmd.run(client, message, args, config, MessageEmbed, messageOwner, config.env.get('fa_cookie_a'), config.env.get('fa_cookie_b'))
         .catch(console.log);
     } else {
-      message.reply('sowwy, but you can\'t uwse me that owten. Plewse wait 5 seconds between commands.');
+      message.reply('Snake brain overloaded. Please be slower with the commands, hun^^.');
     }
   }
 };
