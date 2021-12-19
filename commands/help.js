@@ -10,6 +10,13 @@ module.exports.run = async (client, message, args, config, MessageEmbed, message
       `\`${prefix}${CMD.help.name} ${CMD.help.usage || ''}\`
       ${CMD.help.desc}`, false);
   });
+  embed.addField('Have an idea for me? 💡', `
+      Don't let it die!
+      Suggest it to Fulcrum#9999
+      `)
+    .addField('Need Help?', `
+      Please contact Fulcrum#9999
+      `)
     .setFooter(client.user.tag, client.user.displayAvatarURL)
     .setTimestamp();
   message.channel.send({ embed });
