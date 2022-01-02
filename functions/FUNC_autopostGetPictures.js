@@ -2,14 +2,14 @@ const config = require('../config/main.json');
 
 const postcache = require('../database/models/postcache');
 
-const servertagsblacklist = require('../database/models/servertagsblacklist');
+// const servertagsblacklist = require('../database/models/servertagsblacklist');
 
 const errHander = (err) => { console.error('ERROR:', err); };
 
-async function getBlacklistedTags(serverID) {
-  const result = await servertagsblacklist.findAll({ attributes: ['tag'], where: { serverID: [serverID, config.managementServerID] } });
-  return result;
-}
+// async function getBlacklistedTags(serverID) {
+//   const result = await servertagsblacklist.findAll({ attributes: ['tag'], where: { serverID: [serverID, config.managementServerID] } });
+//   return result;
+// }
 
 function getEndpoint(nsfw, config) {
   let uri = config.e621.endpoint.sfw;
@@ -61,11 +61,12 @@ module.exports.run = async (tags, serverID, channelID, nsfw) => {
   let post = await getPicture(channelID);
   if (!post) {
     // get blacklisted tags to add to the request
-    const blacklistedTagsArray = await getBlacklistedTags(serverID);
-    const suffix = [];
-    blacklistedTagsArray.map((entry) => suffix.push(`-${entry.tag}`));
+    // const blacklistedTagsArray = await getBlacklistedTags(serverID);
+    // const suffix = [];
+    // blacklistedTagsArray.map((entry) => suffix.push(`-${entry.tag}`));
     // store requested pics
-    await storePictures(channelID, await requestPictures(config, nsfw, `${tags} ${suffix.join(' ')}`));
+    // await storePictures(channelID, await requestPictures(config, nsfw, `${tags} ${suffix.join(' ')}`));
+    await storePictures(channelID, await requestPictures(config, nsfw, tags));
     // get first pic
     post = await getPicture(channelID);
   }
