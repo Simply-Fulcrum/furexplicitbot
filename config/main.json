@@ -32,7 +32,6 @@
             "STARTUP_envPrep"
         ],
         "setupFunctions": [
-            "SETUP_status",
             "TCKR_autopost"
         ]
     },
