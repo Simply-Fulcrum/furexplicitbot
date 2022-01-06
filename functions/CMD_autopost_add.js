@@ -105,7 +105,7 @@ module.exports.run = async (client, message, args, config, MessageEmbed, prefix)
   //     \`\`\`${prefix}${module.exports.help.parent} ${subcmd} ${interval} TAGS\`\`\``);
   // }
   const tags = await parseTags(args.join(' ').slice(subcmd.length + 1 + interval.length + 1));
-  if (tags.length > 255) {
+  if (tags.length > 4000) {
     return messageFail(message, 'Your tawgs are too lowng. The maximum length is 255 characters.');
   }
   if (await checkAmmount(config, tags, message.channel.nsfw)) {
