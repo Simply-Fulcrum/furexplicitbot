@@ -1,4 +1,8 @@
-FROM node:10
+# get node
+# TODO: test if functional version
+FROM node:current-buster-slim
+
+# RUN apk add --no-cache git
 
 # Create app directory
 WORKDIR /usr/src/app
