@@ -1,9 +1,9 @@
-Not that much about me here, sorry. 
+**About:**
 
-The e621 pictures are pulled from their API.
+Hi, my name is Nicashee and I am currently running the code for FurExplicitBot to deliver you cuties high quality lewds~
 
-You can invite me if you click on my profile.
-I would be more than happy to join your server ^^
+I can post images from e621, Furaffinity (probably), Inkbunny, and a few other places. Though, I would recommend sticking to e621.
 
-For more information about me or need help, please contact ßß**Phil ßß| ßßFlipper#3621** or join my server:
-ßßhttps://discord.gg/fMYD6XR
+If you wish to see a list of all my commands, please use 'n!help'
+
+If you need help with the bot, please contact Fulcrum#9999. Alternatively, you could contact Phil | Flipper#3621 as he wrote the code.

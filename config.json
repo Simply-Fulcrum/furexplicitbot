@@ -91,13 +91,13 @@
             }
         },
         "blacklistTags": {
-            "managementServerID": "569178297515245578"
+            "managementServerID": "730609289110224947"
         }
     },
     "customEmoji": {
-        "serverID": "569178297515245578",
+        "serverID": "730609289110224947",
         "emoji": {
-            "details": "714094023396032593"
+            "details": "921655994478633011"
         }
     },
     "engine": {
@@ -135,9 +135,9 @@
                 "intervalChecker": 60000,
                 "dbOffset": 7200000,
                 "maxCache": 100,
-                "maxChannels": 2,
+                "maxChannels": 100,
                 "minPostTime": 600000,
-                "maxPostTime": 18000000,
+                "maxPostTime": 180000000000000000000,
                 "minPics": 100
             },
             "poolHandler": {
